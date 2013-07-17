@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% provide(:title, @user.name) %>
 <div class="row">
   <aside class="span4">
@@ -21,4 +22,16 @@
       <%= will_paginate @microposts %>
     <% end %>
   </div>
+=======
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+>>>>>>> 342fde192af769fab7f8b3185cafd3197f4ee0c6
 </div>

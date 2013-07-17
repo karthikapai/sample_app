@@ -1,4 +1,5 @@
 module SessionsHelper
+<<<<<<< HEAD
 
   def sign_in(user)
     remember_token = User.new_remember_token
@@ -44,4 +45,27 @@ module SessionsHelper
   def store_location
     session[:return_to] = request.url
   end
+=======
+	def sign_in(user)
+    	cookies.permanent[:remember_token] = user.remember_token
+    	self.current_user = user
+  	end
+
+  	def signed_in?
+    	!current_user.nil?
+  	end
+
+  	def current_user=(user)
+    	@current_user = user
+  	end
+
+  	def current_user
+   		@current_user ||= User.find_by_remember_token(cookies[:remember_token])
+  	end
+
+  	def sign_out
+    	self.current_user = nil
+    	cookies.delete(:remember_token)
+  	end
+>>>>>>> 342fde192af769fab7f8b3185cafd3197f4ee0c6
 end

@@ -8,6 +8,7 @@ describe "Static pages" do
     before { visit root_path }
 
     it { should have_selector('h1',    text: 'Sample App') }
+<<<<<<< HEAD
     it { should have_title(full_title('')) }
     it { should_not have_title '| Home' }
 
@@ -37,26 +38,39 @@ describe "Static pages" do
         it { should have_link("1 followers", href: followers_user_path(user)) }
       end
     end
+=======
+   # it { should have_selector('title', text: full_title('')) }
+    it { should_not have_selector 'title', text: '| Home' }
+>>>>>>> 342fde192af769fab7f8b3185cafd3197f4ee0c6
   end
 
   describe "Help page" do
     before { visit help_path }
 
     it { should have_selector('h1',    text: 'Help') }
+<<<<<<< HEAD
     it { should have_title(full_title('Help')) }
+=======
+    #it { should have_selector('title', text: full_title('Help')) }
+>>>>>>> 342fde192af769fab7f8b3185cafd3197f4ee0c6
   end
 
   describe "About page" do
     before { visit about_path }
 
     it { should have_selector('h1',    text: 'About') }
+<<<<<<< HEAD
     it { should have_title(full_title('About Us')) }
+=======
+    #it { should have_selector('title', text: full_title('About Us')) }
+>>>>>>> 342fde192af769fab7f8b3185cafd3197f4ee0c6
   end
 
   describe "Contact page" do
     before { visit contact_path }
 
     it { should have_selector('h1',    text: 'Contact') }
+<<<<<<< HEAD
     it { should have_title(full_title('Contact')) }
   end
 
@@ -73,5 +87,8 @@ describe "Static pages" do
     page.should have_title full_title('Sign up')
     click_link "sample app"
     page.should have_selector 'h1', text: 'Sample App'
+=======
+    #it { should have_selector('title', text: full_title('Contact')) }
+>>>>>>> 342fde192af769fab7f8b3185cafd3197f4ee0c6
   end
 end

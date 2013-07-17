@@ -8,7 +8,11 @@ describe "Authentication" do
     before { visit signin_path }
 
     it { should have_selector('h1',    text: 'Sign in') }
+<<<<<<< HEAD
     it { should have_title('Sign in') }
+=======
+    it { should have_selector('title', text: 'Sign in') }
+>>>>>>> 342fde192af769fab7f8b3185cafd3197f4ee0c6
   end
 
   describe "signin" do
@@ -17,7 +21,11 @@ describe "Authentication" do
     describe "with invalid information" do
       before { click_button "Sign in" }
 
+<<<<<<< HEAD
       it { should have_title('Sign in') }
+=======
+      it { should have_selector('title', text: 'Sign in') }
+>>>>>>> 342fde192af769fab7f8b3185cafd3197f4ee0c6
       it { should have_selector('div.alert.alert-error', text: 'Invalid') }
 
       describe "after visiting another page" do
@@ -34,11 +42,16 @@ describe "Authentication" do
         click_button "Sign in"
       end
 
+<<<<<<< HEAD
       it { should have_title(user.name) }
 
       it { should have_link('Users',    href: users_path) }
       it { should have_link('Profile',  href: user_path(user)) }
       it { should have_link('Settings', href: edit_user_path(user)) }
+=======
+      it { should have_selector('title', text: user.name) }
+      it { should have_link('Profile', href: user_path(user)) }
+>>>>>>> 342fde192af769fab7f8b3185cafd3197f4ee0c6
       it { should have_link('Sign out', href: signout_path) }
       it { should_not have_link('Sign in', href: signin_path) }
 
@@ -48,6 +61,7 @@ describe "Authentication" do
       end
     end
   end
+<<<<<<< HEAD
 
   describe "authorization" do
 
@@ -166,4 +180,6 @@ describe "Authentication" do
       end
     end
   end
+=======
+>>>>>>> 342fde192af769fab7f8b3185cafd3197f4ee0c6
 end

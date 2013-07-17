@@ -1,5 +1,6 @@
 # Be sure to restart your server when you modify this file.
 
+<<<<<<< HEAD
 # Your secret key is used for verifying the integrity of signed cookies.
 # If you change this key, all old signed cookies will become invalid!
 
@@ -25,3 +26,10 @@ def secure_token
 end
 
 SampleApp40::Application.config.secret_key_base = secure_token
+=======
+# Your secret key for verifying the integrity of signed cookies.
+# If you change this key, all old signed cookies will become invalid!
+# Make sure the secret is at least 30 characters and all random,
+# no regular words or you'll be exposed to dictionary attacks.
+SampleApp::Application.config.secret_token = 'd5af2e36dca45de3ccf14c8d65f49778c280bf10d3f3b4a527f1918aebba2b07259a3722c194117c7d71dfdccfcfd51775035b0cb4d0543b9f3fdf3089f6ffcb'
+>>>>>>> 342fde192af769fab7f8b3185cafd3197f4ee0c6

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
   before_filter :signed_in_user,
                 only: [:index, :edit, :update, :destroy, :following, :followers]
   before_filter :correct_user,   only: [:edit, :update]
@@ -19,6 +20,19 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+=======
+
+  def show
+  	@user = User.find(params[:id])
+  end
+  
+  def new
+  	@user = User.new
+  end
+
+  def create
+    @user = User.new(params[:user])
+>>>>>>> 342fde192af769fab7f8b3185cafd3197f4ee0c6
     if @user.save
       sign_in @user
       flash[:success] = "Welcome to the Sample App!"
@@ -27,6 +41,7 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+<<<<<<< HEAD
 
   def edit
   end
@@ -77,3 +92,6 @@ class UsersController < ApplicationController
       redirect_to(root_url) unless current_user.admin?
     end
 end
+=======
+end
+>>>>>>> 342fde192af769fab7f8b3185cafd3197f4ee0c6
